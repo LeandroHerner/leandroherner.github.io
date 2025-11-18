@@ -22,27 +22,36 @@
 
     <link rel="me" href="https://www.linkedin.com/in/leandro-herner/" />
 
-    <style>
+<style>
+    .avatar-leandro {
+        display: block;
+        width: 180px;               /* Tamaño ideal para esa barra */
+        height: 180px;
+        border-radius: 50%;         /* Esto hace el recorte circular perfecto */
+        object-fit: cover;          /* Asegura que no se deforme tu cara */
+        border: 4px solid rgba(255, 255, 255, 0.15); /* Un borde semitransparente elegante */
+        margin: 0 auto 2rem auto;   /* Centrado y separado del menú */
+        box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Sombra para darle profundidad */
+    }
+    
+    /* Ajuste para que se vea bien en la barra lateral */
+    #sidebar .inner {
+        text-align: center; /* Centra la foto respecto al ancho de la barra */
+    }
+    
+    #sidebar nav ul {
+        text-align: right; /* Mantiene el menú alineado a la derecha como el original */
+    }
+
+    /* --- NUEVO: SOLUCIÓN RESPONSIVE --- */
+    /* Cuando la pantalla es menor a 1280px (el punto donde el menú se vuelve horizontal),
+       ocultamos la foto para que no estorbe ni se vea cortada. */
+    @media screen and (max-width: 1280px) {
         .avatar-leandro {
-            display: block;
-            width: 180px;               /* Tamaño ideal para esa barra */
-            height: 180px;
-            border-radius: 50%;         /* Esto hace el recorte circular perfecto */
-            object-fit: cover;          /* Asegura que no se deforme tu cara */
-            border: 4px solid rgba(255, 255, 255, 0.15); /* Un borde semitransparente elegante */
-            margin: 0 auto 2rem auto;   /* Centrado y separado del menú */
-            box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Sombra para darle profundidad */
+            display: none !important;
         }
-        
-        /* Ajuste para que se vea bien en la barra lateral */
-        #sidebar .inner {
-            text-align: center; /* Centra la foto respecto al ancho de la barra */
-        }
-        
-        #sidebar nav ul {
-            text-align: right; /* Mantiene el menú alineado a la derecha como el original */
-        }
-    </style>
+    }
+</style>
 
 </head>
 
