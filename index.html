@@ -23,32 +23,40 @@
     <link rel="me" href="https://www.linkedin.com/in/leandro-herner/" />
 
 <style>
+    /* 1. Estilo de la Foto */
     .avatar-leandro {
         display: block;
-        width: 180px;               /* Tamaño ideal para esa barra */
+        width: 180px;
         height: 180px;
-        border-radius: 50%;         /* Esto hace el recorte circular perfecto */
-        object-fit: cover;          /* Asegura que no se deforme tu cara */
-        border: 4px solid rgba(255, 255, 255, 0.15); /* Un borde semitransparente elegante */
-        margin: -2rem auto 2rem auto;   /* Centrado y separado del menú */
-        box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Sombra para darle profundidad */
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid rgba(255, 255, 255, 0.15);
+        margin: 0 auto 2rem auto; /* Margen normal */
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
     
-    /* Ajuste para que se vea bien en la barra lateral */
+    /* 2. REGLA CRÍTICA: Forzar alineación superior en la barra lateral */
     #sidebar .inner {
-        text-align: center; /* Centra la foto respecto al ancho de la barra */
+        text-align: center;
+        /* Esto anula el centrado vertical automático de la plantilla */
+        justify-content: flex-start !important; 
+        /* Esto define cuánto espacio exacto quieres desde el techo hasta la foto */
+        padding-top: 6em !important; 
     }
     
     #sidebar nav ul {
-        text-align: right; /* Mantiene el menú alineado a la derecha como el original */
+        text-align: right;
     }
 
-    /* --- NUEVO: SOLUCIÓN RESPONSIVE --- */
-    /* Cuando la pantalla es menor a 1280px (el punto donde el menú se vuelve horizontal),
-       ocultamos la foto para que no estorbe ni se vea cortada. */
+    /* 3. Responsive: Ocultar en celular */
     @media screen and (max-width: 1280px) {
         .avatar-leandro {
             display: none !important;
+        }
+        /* Restaurar el padding normal en móviles para que el menú no quede pegado arriba */
+        #sidebar .inner {
+            padding-top: 0 !important;
+            justify-content: center !important;
         }
     }
 </style>
