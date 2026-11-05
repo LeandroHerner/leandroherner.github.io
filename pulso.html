@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<!--
+	Pulso | Hyperspace by HTML5 UP
+-->
+<html>
+    <head>
+        <title>Pulso – Tablero Comercial | Leandro Herner</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Pulso: rediseño en Power BI de un tablero comercial de consumo masivo. Sell In, Sell Out, cobertura y surtido contra objetivo.">
+        <meta name="author" content="Leandro Herner">
+        <meta property="og:title" content="Pulso – Tablero Comercial | Leandro Herner">
+        <meta property="og:description" content="Rediseño en Power BI de un tablero comercial de consumo masivo, con marca ficticia y datos sintéticos.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://leandroherner.github.io/pulso.html">
+        <meta property="og:image" content="https://leandroherner.github.io/images/pulso_resumen.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <style>
+            #main p, #main li { color: rgba(255, 255, 255, 0.82); }
+            .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0 0 0; }
+            .galeria figure { margin: 0; }
+            .galeria a { border-bottom: none; display: block; }
+            .galeria img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; display: block; border-radius: 6px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); }
+            .galeria figcaption { font-size: 0.85em; margin-top: 0.6rem; color: rgba(255, 255, 255, 0.7); line-height: 1.5; }
+            .etiquetas { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 2rem 0; }
+            .etiquetas li { padding: 0.2rem 0.9rem; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 999px; font-size: 0.8em; letter-spacing: 0.05em; }
+            .reporte { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin: 1rem 0 0.5rem 0; }
+            .reporte iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+            .nota { font-size: 0.85em; }
+        </style>
+    </head>
+
+    <body class="is-preload">
+
+        <header id="header">
+            <a href="index.html" class="title">Leandro Herner</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="pulso.html" class="active">Pulso</a></li>
+                    <li><a href="GenAurora.html">Generación Aurora</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="wrapper">
+
+            <section id="main" class="wrapper">
+                <div class="inner">
+
+                    <h1 class="major">Pulso – Tablero comercial</h1>
+
+                    <ul class="etiquetas">
+                        <li>Power BI</li>
+                        <li>DAX</li>
+                        <li>Modelado de datos</li>
+                        <li>Diseño de información</li>
+                        <li>Seguridad por filas (RLS)</li>
+                    </ul>
+
+                    <p>
+                        <b>Pulso</b> es la versión para portfolio de un tablero comercial que usa a diario el equipo de ventas de
+                        <b>Mondelēz International</b>. Marca ficticia y datos sintéticos.
+                    </p>
+
+                    <p>
+                        Reúne el seguimiento del mes en un solo lugar: <b>Sell In</b> (facturación a distribuidores),
+                        <b>Sell Out</b> (ventas al punto de venta), <b>cobertura de cartera</b>, <b>surtido mínimo (MSL)</b> y stock,
+                        siempre contra objetivo y con semáforos que muestran qué viene atrasado.
+                    </p>
+
+                    <h2>Cómo está hecho</h2>
+                    <ul>
+                        <li>Medidas en <b>DAX</b> para avance contra objetivo y semáforos de cumplimiento.</li>
+                        <li>Un selector de <b>unidad de medida</b> (pesos, toneladas, MML y bultos) que impacta en todo el tablero.</li>
+                        <li><b>"Armá tu tabla"</b>: parámetros de campo para que cada usuario elija cómo abrir la matriz y qué métricas ver.</li>
+                        <li><b>Estado de los datos</b> en cada página: porcentaje de transmisión y fecha de actualización, para saber si los números están completos antes de leerlos.</li>
+                        <li><b>Gráficos en espejo</b> en Detalle PDV: Sell Out y SKU/PDV enfrentados por canal y por segmentación, para comparar volumen contra profundidad de surtido.</li>
+                        <li><b>Simulador de roles</b>: en producción el acceso se controla con seguridad a nivel de fila (RLS). Acá un selector permite ver el tablero como lo vería cada distribuidora.</li>
+                    </ul>
+
+                    <h2>Tablero interactivo</h2>
+                    <div class="reporte">
+                        <iframe title="Pulso"
+                            src="https://app.powerbi.com/view?r=eyJrIjoiNDI0ZjI0NjItMjI3Yi00NTkwLThmOWMtZDU0MGQxMTFjZDY0IiwidCI6Ijg0N2VkMzExLWUzMWItNDczMS1iYTIxLTQwMDQzNzdiNzZkZCIsImMiOjR9&pageName=9f1c2a7b3d4e5f601a2b"
+                            allowFullScreen="true"></iframe>
+                    </div>
+                    <p class="nota">Arrancá por el simulador de roles, arriba a la izquierda: elegí una distribuidora y fijate cómo cambian los números. Se navega desde la portada o desde el menú lateral, y el botón de abajo a la derecha lo abre en pantalla completa.</p>
+
+                    <h2>Algunas pantallas</h2>
+                    <div class="galeria">
+                        <figure>
+                            <a href="images/pulso_inicio.jpg" target="_blank"><img src="images/pulso_inicio.jpg" alt="Portada de Pulso con navegación por secciones" /></a>
+                            <figcaption><b>Portada.</b> Navegación por secciones, estado de los datos y simulador de roles.</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="images/pulso_resumen.jpg" target="_blank"><img src="images/pulso_resumen.jpg" alt="Resumen ejecutivo de Pulso" /></a>
+                            <figcaption><b>Resumen ejecutivo.</b> Ventas, cobertura y ejecución del mes contra objetivo, en una sola vista.</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="images/pulso_detalle_pdv.jpg" target="_blank"><img src="images/pulso_detalle_pdv.jpg" alt="Detalle por punto de venta en Pulso" /></a>
+                            <figcaption><b>Detalle PDV.</b> Sell Out y SKU/PDV en espejo por canal y segmentación, y matriz armable.</figcaption>
+                        </figure>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <footer id="footer" class="wrapper alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; Leandro Herner. Todos los derechos reservados.</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
+</html>

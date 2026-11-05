@@ -4,14 +4,31 @@
 -->
 <html>
     <head>
-        <title>Generación Aurora | Leandro Herner</title>
+        <title>Generación Aurora – Concurso de incentivos | Leandro Herner</title>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Dashboard interactivo del proyecto Generación Aurora: análisis de objetivos, ventas y ranking de desempeño.">
         <meta name="author" content="Leandro Herner">
+        <meta property="og:title" content="Generación Aurora | Leandro Herner">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://leandroherner.github.io/GenAurora.html">
+        <meta property="og:image" content="https://leandroherner.github.io/images/Portada_GenAurora.png">
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <style>
+            #main p, #main li { color: rgba(255, 255, 255, 0.82); }
+            .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0 0 0; }
+            .galeria figure { margin: 0; }
+            .galeria a { border-bottom: none; display: block; }
+            .galeria img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; display: block; border-radius: 6px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); }
+            .galeria figcaption { font-size: 0.85em; margin-top: 0.6rem; color: rgba(255, 255, 255, 0.7); line-height: 1.5; }
+            .etiquetas { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 2rem 0; }
+            .etiquetas li { padding: 0.2rem 0.9rem; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 999px; font-size: 0.8em; letter-spacing: 0.05em; }
+            .reporte { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin: 1rem 0 0.5rem 0; }
+            .reporte iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+            .nota { font-size: 0.85em; }
+        </style>
     </head>
 
     <body class="is-preload">
@@ -21,8 +38,8 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
+					<li><a href="pulso.html">Pulso</a></li>
                     <li><a href="GenAurora.html" class="active">Generación Aurora</a></li>
-                    <li><a href="ventas-ecommerce.html">Ventas E-commerce</a></li>
                 </ul>
             </nav>
         </header>
@@ -32,36 +49,57 @@
             <section id="main" class="wrapper">
                 <div class="inner">
 
-                    <h1 class="major">Generación Aurora</h1>
+                    <h1 class="major">Generación Aurora – Concurso de incentivos</h1>
+
+                    <ul class="etiquetas">
+                        <li>Power BI</li>
+                        <li>DAX</li>
+                        <li>Seguridad por filas (RLS)</li>
+                        <li>Gamificación</li>
+                    </ul>
 
                     <p>
-                        <b>Generación Aurora</b> es una solución de Business Intelligence basada en un caso real desarrollado para 
-                        <b>Mondelez International</b> (datos anonimizados). Es una herramienta interna pensada para los 
-                        <b>Responsables Comerciales (RCs)</b>, que les permite monitorear un programa de incentivos y 
-                        <b>evaluar el rendimiento</b> de su red de distribución.
+                        <b>Generación Aurora</b> es el tablero de un concurso de incentivos para distribuidores, basado en uno que desarrollé para
+                        <b>Mondelēz International</b>. Datos anonimizados.
                     </p>
 
                     <p>
-                        El objetivo principal es que cada RC pueda conectar el desempeño operativo de sus cuentas con los resultados 
-                        del concurso. El reporte permite un doble análisis: ver el <b>Ranking Nacional</b> para 
-                        <b>entender la posición</b> de sus clientes frente a los demás; y revisar en detalle los <b>KPIs clave</b> 
-                        —ventas, objetivos, mix— que cada distribuidor necesita cumplir para subir de puesto.
+                        Lo usan los responsables comerciales (RC) para seguir cómo viene cada una de sus cuentas: el <b>ranking nacional</b> muestra
+                        en qué puesto está cada distribuidor frente al resto, y el detalle de ventas, objetivos y mix explica qué le falta para subir.
                     </p>
 
-                    <p>
-                        A nivel técnico, el proyecto implementa una arquitectura de seguridad basada en <b>Row-Level Security (RLS)</b>, alineada con la estructura comercial. 
-                        Esto asegura que la información se vea correctamente: el <b>Ranking</b> es accesible para todo el equipo, mientras que la <b>Base Plana</b> 
-                        aplica filtros dinámicos que permiten a cada <b>RC</b> ver únicamente el detalle transaccional correspondiente a su cartera de clientes.
-                    </p>
+                    <h2>Cómo está hecho</h2>
+                    <ul>
+                        <li><b>Puntaje por variable</b>: cada distribuidor suma puntos según su cumplimiento en MSL, cartera, surtido, compras por categoría y ventas, más bonus por combos y tiendas destacadas.</li>
+                        <li><b>Rankings automáticos</b> nacional, por región (AMBA e Interior) y por jefatura, con el primer puesto de cada uno destacado arriba.</li>
+                        <li><b>Base plana</b> con el detalle por cliente, mes y variable: objetivo, cumplimiento, avance con semáforo y puntos obtenidos.</li>
+                        <li><b>Seguridad por filas (RLS)</b> según la estructura comercial: el ranking lo ve todo el equipo y la base plana solo el RC de cada cartera.</li>
+                    </ul>
 
-                    <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
-                        <iframe title="GenAurora"
+                    <h2>Tablero interactivo</h2>
+                    <div class="reporte">
+                        <iframe title="Generación Aurora"
                             src="https://app.powerbi.com/view?r=eyJrIjoiYTg5NTYwYWItYjQ4Zi00MTNlLWJjNTktMDUwMzU4MTBkMTRlIiwidCI6Ijg0N2VkMzExLWUzMWItNDczMS1iYTIxLTQwMDQzNzdiNzZkZCIsImMiOjR9"
-                            frameborder="0"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;"
-                            allowFullScreen="true">
-                        </iframe>
+                            allowFullScreen="true"></iframe>
                     </div>
+                    <p class="nota">Se navega con los botones de abajo de cada página. El botón de abajo a la derecha lo abre en pantalla completa.</p>
+
+                    <h2>Algunas pantallas</h2>
+                    <div class="galeria">
+                        <figure>
+                            <a href="images/aurora_inicio.jpg" target="_blank"><img src="images/aurora_inicio.jpg" alt="Portada de Generación Aurora" /></a>
+                            <figcaption><b>Portada.</b> Acceso a las tres secciones del concurso: ranking, base plana y puntajes máximos.</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="images/aurora_ranking.jpg" target="_blank"><img src="images/aurora_ranking.jpg" alt="Ranking de Generación Aurora" /></a>
+                            <figcaption><b>Ranking.</b> Primeros puestos por región y jefatura, ranking nacional y rankings por responsable comercial.</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="images/aurora_base_plana.jpg" target="_blank"><img src="images/aurora_base_plana.jpg" alt="Base plana de Generación Aurora" /></a>
+                            <figcaption><b>Base plana.</b> Detalle por cliente, mes y variable: objetivo, cumplimiento, avance y puntos.</figcaption>
+                        </figure>
+                    </div>
+
                 </div>
             </section>
 
@@ -70,7 +108,7 @@
         <footer id="footer" class="wrapper alt">
             <div class="inner">
                 <ul class="menu">
-                    <li>&copy; Leandro Herner. All rights reserved.</li>
+                    <li>&copy; Leandro Herner. Todos los derechos reservados.</li>
                     <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
                 </ul>
             </div>
