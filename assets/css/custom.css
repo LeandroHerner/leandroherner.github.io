@@ -1,0 +1,52 @@
+/* Ajustes propios sobre Strata */
+#header h1 { color: rgba(255, 255, 255, 0.6); }
+#header h1 strong { color: #fff; font-size: 1.15em; }
+#header .menu-lateral { margin-top: 2.5em; display: flex; flex-direction: column; align-items: flex-end; gap: 0.6em; }
+#header .menu-lateral a { color: rgba(255, 255, 255, 0.75); border-bottom: none; font-size: 0.95em; letter-spacing: 0.04em; }
+#header .menu-lateral a:hover { color: #fff; }
+#header .image.avatar img { width: 7.5em; height: 7.5em; object-fit: cover; }
+
+.work-item .thumb img { aspect-ratio: 4 / 3; object-fit: cover; object-position: center; }
+.work-item h3 a { color: inherit; border-bottom: none; }
+.work-item h3 a:hover { color: #3a6ea5; }
+.etiquetas { list-style: none; padding: 0; margin: 0 0 1em 0; display: flex; flex-wrap: wrap; gap: 0.4em; }
+.etiquetas li { padding: 0.1em 0.75em; border: 1px solid #d7dde3; border-radius: 999px; font-size: 0.8em; color: #6b7682; }
+
+.herramientas h4 { margin-bottom: 0.4em; }
+.herramientas h4:before { color: #3a6ea5; margin-right: 0.6em; }
+.herramientas p { margin-bottom: 1.6em; }
+
+@media screen and (max-width: 980px) {
+	#header .menu-lateral { display: none; }
+}
+
+/* Más contraste en el texto */
+body, input, select, textarea { color: #5f6873; }
+#header h1 strong { display: block; }
+#main strong, #main b, #main h2, #main h3, #main h4 { color: #2f3a44; }
+
+/* Páginas de proyecto */
+#header .menu-lateral a.active { color: #fff; font-weight: 600; }
+.proyecto #main h1 { font-size: 1.9em; line-height: 1.3em; color: #2f3a44; margin: 0; }
+.proyecto #main h2 { margin-top: 1.6em; }
+.proyecto .etiquetas { margin-bottom: 1.8em; }
+.volver { margin: 0 0 1.2em 0; font-size: 0.85em; }
+.volver a { border-bottom: none; color: #6b7682; }
+.volver a:hover { color: #3a6ea5; }
+.reporte { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin: 1em 0 0.6em 0; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 18px rgba(31, 36, 41, 0.15); }
+.reporte iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.nota { font-size: 0.85em; color: #6b7682; }
+.galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5em; margin: 1.5em 0 0 0; }
+.galeria figure { margin: 0; }
+.galeria a { border-bottom: none; display: block; }
+.galeria img { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-radius: 6px; box-shadow: 0 4px 14px rgba(31, 36, 41, 0.15); transition: transform 0.2s ease; }
+.galeria a:hover img { transform: translateY(-3px); }
+.galeria figcaption { font-size: 0.8em; margin-top: 0.6em; line-height: 1.5; color: #6b7682; }
+.proyecto #main header.major { margin-bottom: 1em; }
+
+/* Columna lateral más angosta en pantallas grandes */
+@media screen and (min-width: 1281px) {
+	#header { width: clamp(360px, 22%, 440px); padding: 8em 3em; }
+	#main { margin-left: clamp(360px, 22%, 440px); width: auto; max-width: 64em; padding-left: 5em; }
+}
+#footer .copyright li { display: block; border-left: 0; margin-left: 0; padding-left: 0; }
